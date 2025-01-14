@@ -1,0 +1,15 @@
+@import "node_modules/ol/ol.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+h1 {
+  text-align: center;
+}
+#map {
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  width: 100%;
+}
