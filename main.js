@@ -14,18 +14,20 @@ const vectorSource = new VectorSource();
 const locations = [
   {name: 'Pasadena, CA', coords: [-118.131809, 34.184581], num: 1}, 
   {name: 'Folsom, CA', coords: [-121.147826, 38.674677], num: 2}, 
-  {name: 'Northbrook, IL', coords: [-87.836202, 42.127520], num: 3},
-  {name: 'Union City, CA', coords: [-122.018266, 37.598998], num: 4} 
+  {name: 'Northbrook, IL', coords: [-87.836202, 42.127520], num: 1},
+  {name: 'San Francisco, CA', coords: [-122.727652, 37.785204], num: 3},
+  {name: 'Fresno, CA', coords: [-119.794692, 36.785633], num: 1},
+  {name: 'Gardnerville, NV', coords: [-119.731994, 38.937779], num: 1}
 ]
 
 locations.forEach(location => {
   const circleFeature = new Feature({
-    geometry: new Circle(location.coords, 0.3),
+    geometry: new Circle(location.coords, (location.num*0.3)),
   });
   circleFeature.setStyle(
     new Style({
         fill: new Fill({
-          color: [213,55*(location.num),161,0.25*(location.num)],
+          color: [213,5*(location.num),(10*location.num),0.25*(location.num)],
         }),
         stroke: new Stroke({
           color: [0, 0, 0, 1],
